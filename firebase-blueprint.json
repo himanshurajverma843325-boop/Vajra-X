@@ -1,0 +1,66 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile authenticated via Firebase Google Sign-In",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "email"]
+    },
+    "SavedLocation": {
+      "title": "SavedLocation",
+      "description": "Monitored watch location or critical infrastructure asset",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "locationId": { "type": "string" },
+        "name": { "type": "string" },
+        "state": { "type": "string" },
+        "latitude": { "type": "number" },
+        "longitude": { "type": "number" },
+        "alertThreshold": { "type": "string" },
+        "notes": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "name", "latitude", "longitude"]
+    },
+    "WeatherNote": {
+      "title": "WeatherNote",
+      "description": "User logged operational weather observation, nowcast memo, or threat notes",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "scenarioId": { "type": "string" },
+        "locationName": { "type": "string" },
+        "severity": { "type": "string" },
+        "notes": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "title", "notes"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Stores user profile information"
+    },
+    "/users/{userId}/savedLocations/{locationId}": {
+      "schema": "SavedLocation",
+      "description": "User's pinned atmospheric observation locations"
+    },
+    "/users/{userId}/weatherNotes/{noteId}": {
+      "schema": "WeatherNote",
+      "description": "User's operational nowcast notes and storm incident logs"
+    }
+  }
+}

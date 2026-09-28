@@ -1,0 +1,196 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  html.light body,
+  body:not(.dark) {
+    background-color: #F8FAFC;
+    color: #0F172A;
+  }
+
+  html.dark body {
+    background-color: #0B1120;
+    color: #F1F5F9;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom Leaflet Styling for Light and Dark Modes */
+html.light .leaflet-container,
+body:not(.dark) .leaflet-container {
+  background-color: #E2E8F0 !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+
+html.dark .leaflet-container {
+  background-color: #070C17 !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+
+html.light .leaflet-popup-content-wrapper,
+body:not(.dark) .leaflet-popup-content-wrapper {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border: 1px solid #CBD5E1 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1) !important;
+}
+
+html.dark .leaflet-popup-content-wrapper {
+  background-color: #0F172A !important;
+  color: #F8FAFC !important;
+  border: 1px solid #334155 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.7) !important;
+}
+
+html.light .leaflet-popup-tip,
+body:not(.dark) .leaflet-popup-tip {
+  background-color: #FFFFFF !important;
+  border: 1px solid #CBD5E1 !important;
+}
+
+html.dark .leaflet-popup-tip {
+  background-color: #0F172A !important;
+  border: 1px solid #334155 !important;
+}
+
+html.light .leaflet-control-zoom a,
+body:not(.dark) .leaflet-control-zoom a {
+  background-color: #FFFFFF !important;
+  color: #334155 !important;
+  border-color: #CBD5E1 !important;
+}
+
+html.light .leaflet-control-zoom a:hover,
+body:not(.dark) .leaflet-control-zoom a:hover {
+  background-color: #F1F5F9 !important;
+  color: #0284C7 !important;
+}
+
+html.dark .leaflet-control-zoom a {
+  background-color: #0F172A !important;
+  color: #E2E8F0 !important;
+  border-color: #334155 !important;
+}
+
+html.dark .leaflet-control-zoom a:hover {
+  background-color: #1E293B !important;
+  color: #38BDF8 !important;
+}
+
+html.light .leaflet-control-attribution,
+body:not(.dark) .leaflet-control-attribution {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  color: #64748B !important;
+  font-size: 10px !important;
+  backdrop-filter: blur(4px);
+}
+
+html.light .leaflet-control-attribution a,
+body:not(.dark) .leaflet-control-attribution a {
+  color: #0284C7 !important;
+}
+
+html.dark .leaflet-control-attribution {
+  background-color: rgba(15, 23, 42, 0.85) !important;
+  color: #94A3B8 !important;
+  font-size: 10px !important;
+  backdrop-filter: blur(4px);
+}
+
+html.dark .leaflet-control-attribution a {
+  color: #38BDF8 !important;
+}
+
+/* Light Mode Overrides for Existing Dark Color Classes */
+html.light .bg-\[\#0B1120\],
+body:not(.dark) .bg-\[\#0B1120\] {
+  background-color: #F8FAFC !important;
+}
+
+html.light .bg-\[\#080D1A\],
+body:not(.dark) .bg-\[\#080D1A\] {
+  background-color: #F1F5F9 !important;
+}
+
+html.light .bg-\[\#0F172A\],
+body:not(.dark) .bg-\[\#0F172A\] {
+  background-color: #FFFFFF !important;
+}
+
+html.light .bg-\[\#111C35\],
+body:not(.dark) .bg-\[\#111C35\] {
+  background-color: #FFFFFF !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+}
+
+html.light .bg-\[\#0E1A33\],
+body:not(.dark) .bg-\[\#0E1A33\] {
+  background-color: #F8FAFC !important;
+}
+
+html.light .border-\[\#1E293B\],
+body:not(.dark) .border-\[\#1E293B\] {
+  border-color: #E2E8F0 !important;
+}
+
+html.light .border-\[\#334155\],
+body:not(.dark) .border-\[\#334155\] {
+  border-color: #CBD5E1 !important;
+}
+
+html.light .text-slate-100,
+body:not(.dark) .text-slate-100 {
+  color: #0F172A !important;
+}
+
+html.light .text-slate-200,
+body:not(.dark) .text-slate-200 {
+  color: #1E293B !important;
+}
+
+html.light .text-slate-300,
+body:not(.dark) .text-slate-300 {
+  color: #334155 !important;
+}
+
+html.light .text-slate-400,
+body:not(.dark) .text-slate-400 {
+  color: #64748B !important;
+}
+
+html.light .text-white,
+body:not(.dark) .text-white {
+  color: #0F172A !important;
+}
+
+/* Exceptions for badges/buttons with explicit text-white */
+html.light .text-white.bg-sky-600,
+html.light .text-white.bg-emerald-600,
+html.light .text-white.bg-rose-600,
+html.light button.text-white,
+html.light a.text-white,
+body:not(.dark) button.text-white,
+body:not(.dark) a.text-white,
+body:not(.dark) .bg-gradient-to-r.text-white {
+  color: #FFFFFF !important;
+}
+
+/* Light Mode Card Shadows and Contrast */
+html.light .rounded-xl,
+html.light .rounded-2xl {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+}

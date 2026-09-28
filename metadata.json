@@ -1,0 +1,8 @@
+{
+  "name": "VAJRA-X",
+  "description": "AI-powered thunderstorm and lightning nowcasting dashboard providing real-time storm trajectory, intensity, and location-specific hazard alerts for disaster management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
